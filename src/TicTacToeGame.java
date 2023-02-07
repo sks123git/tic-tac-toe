@@ -28,7 +28,7 @@ public class TicTacToeGame {
         boolean success = false;
         Scanner scanner = new Scanner(System.in);
         move = scanner.nextInt();
-        while (success == false){
+        while (success == false){                           //Empty index check
             if (gameBoard[move] == '-') {
                 gameBoard[move] = player;
                 success = true;
