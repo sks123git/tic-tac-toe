@@ -21,13 +21,32 @@ public class TicTacToeGame {
         }
         System.out.println();
     }
+
+    public static void playerMove() {
+        System.out.println("Kindly play your move between 1-9 ");
+        int move;
+        boolean success = false;
+        Scanner scanner = new Scanner(System.in);
+        move = scanner.nextInt();
+        while (success == false){
+            if (gameBoard[move] == '-') {
+                gameBoard[move] = player;
+                success = true;
+            } else {
+                System.out.println("its already taken, kindly try another index");
+                move = scanner.nextInt();
+            }
+    }
+        showBoard();
+    }
     public static void main(String[] args) {
 
-        for (int i = 1; i < 10; i++) {
-            gameBoard[i] = (char)(' ');
-        }
         System.out.println("@@@@@@@@@@@@@@ Welcome to TicTacToe game @@@@@@@@@@@@@");
         //player choose a letter between x or o to proceed
+
+        for (int i = 1; i < 10; i++) {
+            gameBoard[i] = '-';
+        }
         player=chooseLetterXorO();
         if (player=='x'){
             computer = 'o';
@@ -35,5 +54,9 @@ public class TicTacToeGame {
             computer = 'x';
         }
         showBoard();
+
+        playerMove();
+
+
     }
 }
