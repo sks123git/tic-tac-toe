@@ -4,7 +4,7 @@ import java.util.Scanner;
 public class TicTacToeGame {
     public static char letter,playerValue,computerValue;
     public static char[] gameBoard = new char[10];
-    public static int chance;
+    public static int chance,flag=0;
     public static int boardFull = 1;
 
     public static int toss(){
@@ -43,6 +43,7 @@ public class TicTacToeGame {
             }
     }
         showBoard();
+        winCheck();
         boardFull++;
         chance=1;           //Computer chance
     }
@@ -61,9 +62,65 @@ public class TicTacToeGame {
             }
         }
         showBoard();
+        winCheck();
         boardFull++;
         chance=2;       //Player Chance
     }
+
+    public static void winCheck() {
+        if (Character.compare(gameBoard[1], playerValue) == 0 && Character.compare(gameBoard[2], playerValue) == 0 && Character.compare(gameBoard[3], playerValue) == 0) {
+            System.out.println("Player has won!!!!");
+            flag=1;
+        } else if (Character.compare(gameBoard[3], playerValue) == 0 && Character.compare(gameBoard[5], playerValue) == 0 && Character.compare(gameBoard[7], playerValue) == 0) {
+            System.out.println("Player has won!!!!");
+            flag=1;
+        } else if (Character.compare(gameBoard[4], playerValue) == 0 && Character.compare(gameBoard[5], playerValue) == 0 && Character.compare(gameBoard[6], playerValue) == 0) {
+            System.out.println("Player has won!!!!");
+            flag=1;
+        } else if (Character.compare(gameBoard[7], playerValue) == 0 && Character.compare(gameBoard[8], playerValue) == 0 && Character.compare(gameBoard[9], playerValue) == 0) {
+            System.out.println("Player has won!!!!");
+            flag=1;
+        } else if (Character.compare(gameBoard[1], playerValue) == 0 && Character.compare(gameBoard[4], playerValue) == 0 && Character.compare(gameBoard[7], playerValue) == 0) {
+            System.out.println("Player has won!!!!");
+            flag=1;
+        } else if (Character.compare(gameBoard[2], playerValue) == 0 && Character.compare(gameBoard[5], playerValue) == 0 && Character.compare(gameBoard[8], playerValue) == 0) {
+            System.out.println("Player has won!!!!");
+            flag=1;
+        } else if (Character.compare(gameBoard[3], playerValue) == 0 && Character.compare(gameBoard[6], playerValue) == 0 && Character.compare(gameBoard[9], playerValue) == 0) {
+            System.out.println("Player has won!!!!");
+            flag=1;
+        } else if (Character.compare(gameBoard[1], playerValue) == 0 && Character.compare(gameBoard[5], playerValue) == 0 && Character.compare(gameBoard[9], playerValue) == 0) {
+            System.out.println("Player has won!!!!");
+            flag=1;
+        } else if (Character.compare(gameBoard[1], computerValue) == 0 && Character.compare(gameBoard[2], computerValue) == 0 && Character.compare(gameBoard[3], computerValue) == 0) {
+            System.out.println("Computer has won!!!!");
+            flag=1;
+        } else if (Character.compare(gameBoard[3], computerValue) == 0 && Character.compare(gameBoard[5], computerValue) == 0 && Character.compare(gameBoard[7], computerValue) == 0) {
+            System.out.println("Computer has won!!!!");
+            flag=1;
+        } else if (Character.compare(gameBoard[4], computerValue) == 0 && Character.compare(gameBoard[5], computerValue) == 0 && Character.compare(gameBoard[6], computerValue) == 0) {
+            System.out.println("Computer has won!!!!");
+            flag=1;
+        } else if (Character.compare(gameBoard[7], computerValue) == 0 && Character.compare(gameBoard[8], computerValue) == 0 && Character.compare(gameBoard[9], computerValue) == 0) {
+            System.out.println("Computer has won!!!!");
+            flag=1;
+        } else if (Character.compare(gameBoard[1], computerValue) == 0 && Character.compare(gameBoard[4], computerValue) == 0 && Character.compare(gameBoard[7], computerValue) == 0) {
+            System.out.println("Computer has won!!!!");
+            flag=1;
+        } else if (Character.compare(gameBoard[2], computerValue) == 0 && Character.compare(gameBoard[5], computerValue) == 0 && Character.compare(gameBoard[8], computerValue) == 0) {
+            System.out.println("Computer has won!!!!");
+            flag=1;
+        } else if (Character.compare(gameBoard[3], computerValue) == 0 && Character.compare(gameBoard[6], computerValue) == 0 && Character.compare(gameBoard[9], computerValue) == 0) {
+            System.out.println("Computer has won!!!!");
+            flag=1;
+        } else if (Character.compare(gameBoard[1], computerValue) == 0 && Character.compare(gameBoard[5], computerValue) == 0 && Character.compare(gameBoard[9], computerValue) == 0) {
+            System.out.println("Computer has won!!!!");
+            flag=1;
+        }else {
+            System.out.println("Game is a tie!!");
+        }
+    }
+
     public static void main(String[] args) {
 
         System.out.println("@@@@@@@@@@@@@@ Welcome to TicTacToe game @@@@@@@@@@@@@");
@@ -89,7 +146,7 @@ public class TicTacToeGame {
                 computerMove();
             }
 
-            while (boardFull<10){
+            while (boardFull<10 && flag==0){
                 if(chance==1){
                     System.out.println("Computer turn");
                     computerMove();
