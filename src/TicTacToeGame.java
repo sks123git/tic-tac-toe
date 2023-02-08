@@ -53,7 +53,9 @@ public class TicTacToeGame {
 
        int[] corners = {1,3,7,9};
         Random generator=new Random();
-        int randomCorner = generator.nextInt(corners.length);
+        int randomCorner = generator.nextInt(corners.length);;
+        int[] sides = {2,4,6,8};
+        int randomSides = generator.nextInt(sides.length);
         boolean success = false;
         /*
                 added condition below for win situation and blocking the opponent
@@ -132,12 +134,23 @@ public class TicTacToeGame {
         }else if(gameBoard[5] == '-' && Character.compare(gameBoard[3],computerValue)==0 && Character.compare(gameBoard[7],computerValue)==0|| gameBoard[5] == '-' &&  Character.compare(gameBoard[3],playerValue)==0 && Character.compare(gameBoard[7],playerValue)==0)
         {gameBoard[5]=computerValue;
             success=true;
-        }else if(gameBoard[randomCorner] == '-'){
+        }else if(success==false){
+            while (gameBoard[randomCorner] != '-'){
+                randomCorner = generator.nextInt(corners.length);
+            }
             gameBoard[randomCorner]=computerValue;
+            success=true;
         } else if(gameBoard[5] == '-'){
             gameBoard[5] = computerValue;
+            success=true;
+        } else if(success==false){
+            while (gameBoard[randomSides] != '-'){
+                randomSides = generator.nextInt(sides.length);
+            }
+            gameBoard[randomSides] = computerValue;
+            success=true;
         }
-    }
+        }
 
         showBoard();
         winCheck();
