@@ -62,78 +62,80 @@ public class TicTacToeGame {
 //            }
 //        }
         while (success==false){
-                if(Character.compare(gameBoard[1],computerValue)==0 && Character.compare(gameBoard[2],computerValue)==0)
-                {gameBoard[3]=computerValue;
-                    success=true;
+                if(gameBoard[computerMove] == '-' && Character.compare(gameBoard[1],computerValue)==0 && Character.compare(gameBoard[2],computerValue)==0) {
+                    gameBoard[3] = computerValue;
+                    success = true;
                 }
-
-        if(Character.compare(gameBoard[2],computerValue)==0 && Character.compare(gameBoard[3],computerValue)==0)
+                /*
+                added condition below for win situation and blocking the opponent
+                 */
+        if(gameBoard[1] == '-' && Character.compare(gameBoard[2],computerValue)==0 && Character.compare(gameBoard[3],computerValue)==0 || gameBoard[1] == '-' && Character.compare(gameBoard[2],playerValue)==0 && Character.compare(gameBoard[3],playerValue)==0 )
         {gameBoard[1]=computerValue;
             success=true;
-        } else if(Character.compare(gameBoard[1],computerValue)==0 && Character.compare(gameBoard[3],computerValue)==0)
+        } else if(gameBoard[2] == '-' && Character.compare(gameBoard[1],computerValue)==0 && Character.compare(gameBoard[3],computerValue)==0|| gameBoard[2] == '-' && Character.compare(gameBoard[1],playerValue)==0 && Character.compare(gameBoard[3],playerValue)==0)
         {gameBoard[2]=computerValue;
             success=true;
-        } else if(Character.compare(gameBoard[4],computerValue)==0 && Character.compare(gameBoard[5],computerValue)==0)
+        } else if(gameBoard[6] == '-' && Character.compare(gameBoard[4],computerValue)==0 && Character.compare(gameBoard[5],computerValue)==0|| gameBoard[6] == '-' && Character.compare(gameBoard[4],playerValue)==0 && Character.compare(gameBoard[5],playerValue)==0)
             {gameBoard[6]=computerValue;
                 success=true;
-            } else if(Character.compare(gameBoard[5],computerValue)==0 && Character.compare(gameBoard[6],computerValue)==0)
+            } else if(gameBoard[4] == '-' && Character.compare(gameBoard[5],computerValue)==0 && Character.compare(gameBoard[6],computerValue)==0 || gameBoard[4] == '-' && Character.compare(gameBoard[5],playerValue)==0 && Character.compare(gameBoard[6],playerValue)==0)
             {gameBoard[4]=computerValue;
                 success=true;
-            } else if(Character.compare(gameBoard[4],computerValue)==0 && Character.compare(gameBoard[6],computerValue)==0)
+            } else if(gameBoard[5] == '-' && Character.compare(gameBoard[4],computerValue)==0 && Character.compare(gameBoard[6],computerValue)==0 || gameBoard[5] == '-' && Character.compare(gameBoard[4],playerValue)==0 && Character.compare(gameBoard[6],playerValue)==0)
             {gameBoard[5]=computerValue;
                 success=true;
-            } else if(Character.compare(gameBoard[7],computerValue)==0 && Character.compare(gameBoard[8],computerValue)==0)
+            } else if(gameBoard[9] == '-' && Character.compare(gameBoard[7],computerValue)==0 && Character.compare(gameBoard[8],computerValue)==0 || gameBoard[9] == '-' && Character.compare(gameBoard[7],playerValue)==0 && Character.compare(gameBoard[8],playerValue)==0)
             {gameBoard[9]=computerValue;
             success=true;
-            } else if(Character.compare(gameBoard[8],computerValue)==0 && Character.compare(gameBoard[9],computerValue)==0)
+            } else if(gameBoard[7] == '-' && Character.compare(gameBoard[8],computerValue)==0 && Character.compare(gameBoard[9],computerValue)==0 || gameBoard[7] == '-' && Character.compare(gameBoard[8],playerValue)==0 && Character.compare(gameBoard[9],playerValue)==0)
             {gameBoard[7]=computerValue;
             success=true;
-            }else if(Character.compare(gameBoard[7],computerValue)==0 && Character.compare(gameBoard[9],computerValue)==0)
+            }else if(gameBoard[8] == '-' && Character.compare(gameBoard[7],computerValue)==0 && Character.compare(gameBoard[9],computerValue)==0 || gameBoard[8] == '-' && Character.compare(gameBoard[7],playerValue)==0 && Character.compare(gameBoard[9],playerValue)==0)
             {gameBoard[8]=computerValue;
             success=true;
-            }else if(Character.compare(gameBoard[1],computerValue)==0 && Character.compare(gameBoard[4],computerValue)==0)
+            }else if(gameBoard[7] == '-' && Character.compare(gameBoard[1],computerValue)==0 && Character.compare(gameBoard[4],computerValue)==0 || gameBoard[7] == '-' && Character.compare(gameBoard[1],playerValue)==0 && Character.compare(gameBoard[4],playerValue)==0)
             {gameBoard[7]=computerValue;
             success=true;
-            }else if(Character.compare(gameBoard[4],computerValue)==0 && Character.compare(gameBoard[7],computerValue)==0)
+            }else if(gameBoard[1] == '-' && Character.compare(gameBoard[4],computerValue)==0 && Character.compare(gameBoard[7],computerValue)==0|| gameBoard[1] == '-' &&  Character.compare(gameBoard[4],playerValue)==0 && Character.compare(gameBoard[7],playerValue)==0)
         {gameBoard[1]=computerValue;
             success=true;
-        }else if(Character.compare(gameBoard[1],computerValue)==0 && Character.compare(gameBoard[7],computerValue)==0)
+        }else if(gameBoard[4] == '-' && Character.compare(gameBoard[1],computerValue)==0 && Character.compare(gameBoard[7],computerValue)==0|| gameBoard[4] == '-' &&  Character.compare(gameBoard[1],playerValue)==0 && Character.compare(gameBoard[7],playerValue)==0)
         {gameBoard[4]=computerValue;
             success=true;
-        }else if(Character.compare(gameBoard[2],computerValue)==0 && Character.compare(gameBoard[5],computerValue)==0)
+        }else if(gameBoard[8] == '-' && Character.compare(gameBoard[2],computerValue)==0 && Character.compare(gameBoard[5],computerValue)==0|| gameBoard[8] == '-' &&  Character.compare(gameBoard[2],playerValue)==0 && Character.compare(gameBoard[5],playerValue)==0)
         {gameBoard[8]=computerValue;
             success=true;
-        }else if(Character.compare(gameBoard[5],computerValue)==0 && Character.compare(gameBoard[8],computerValue)==0)
+        }else if(gameBoard[2] == '-' && Character.compare(gameBoard[5],computerValue)==0 && Character.compare(gameBoard[8],computerValue)==0|| gameBoard[2] == '-' &&  Character.compare(gameBoard[5],playerValue)==0 && Character.compare(gameBoard[8],playerValue)==0)
         {gameBoard[2]=computerValue;
             success=true;
-        }else if(Character.compare(gameBoard[2],computerValue)==0 && Character.compare(gameBoard[8],computerValue)==0)
+        }else if(gameBoard[5] == '-' && Character.compare(gameBoard[2],computerValue)==0 && Character.compare(gameBoard[8],computerValue)==0|| gameBoard[5] == '-' &&  Character.compare(gameBoard[2],playerValue)==0 && Character.compare(gameBoard[8],playerValue)==0)
         {gameBoard[5]=computerValue;
             success=true;
-        }else if(Character.compare(gameBoard[3],computerValue)==0 && Character.compare(gameBoard[6],computerValue)==0)
+        }else if(gameBoard[9] == '-' && Character.compare(gameBoard[3],computerValue)==0 && Character.compare(gameBoard[6],computerValue)==0 || gameBoard[9] == '-' &&  Character.compare(gameBoard[3],playerValue)==0 && Character.compare(gameBoard[6],playerValue)==0)
         {gameBoard[9]=computerValue;
             success=true;
-        }else if(Character.compare(gameBoard[6],computerValue)==0 && Character.compare(gameBoard[9],computerValue)==0)
+        }else if(gameBoard[3] == '-' && Character.compare(gameBoard[6],computerValue)==0 && Character.compare(gameBoard[9],computerValue)==0 || gameBoard[3] == '-' &&  Character.compare(gameBoard[6],playerValue)==0 && Character.compare(gameBoard[9],playerValue)==0)
         {gameBoard[3]=computerValue;
             success=true;
-        }else if(Character.compare(gameBoard[3],computerValue)==0 && Character.compare(gameBoard[9],computerValue)==0)
+        }else if(gameBoard[6] == '-' && Character.compare(gameBoard[3],computerValue)==0 && Character.compare(gameBoard[9],computerValue)==0|| gameBoard[6] == '-' &&  Character.compare(gameBoard[3],playerValue)==0 && Character.compare(gameBoard[9],playerValue)==0)
         {gameBoard[6]=computerValue;
             success=true;
-        }else if(Character.compare(gameBoard[1],computerValue)==0 && Character.compare(gameBoard[5],computerValue)==0)
+        }else if(gameBoard[9] == '-' && Character.compare(gameBoard[1],computerValue)==0 && Character.compare(gameBoard[5],computerValue)==0|| gameBoard[9] == '-' &&  Character.compare(gameBoard[1],playerValue)==0 && Character.compare(gameBoard[5],playerValue)==0)
         {gameBoard[9]=computerValue;
             success=true;
-        }else if(Character.compare(gameBoard[5],computerValue)==0 && Character.compare(gameBoard[9],computerValue)==0)
+        }else if(gameBoard[1] == '-' && Character.compare(gameBoard[5],computerValue)==0 && Character.compare(gameBoard[9],computerValue)==0|| gameBoard[1] == '-' &&  Character.compare(gameBoard[5],playerValue)==0 && Character.compare(gameBoard[9],playerValue)==0)
         {gameBoard[1]=computerValue;
             success=true;
-        }else if(Character.compare(gameBoard[1],computerValue)==0 && Character.compare(gameBoard[9],computerValue)==0)
+        }else if(gameBoard[5] == '-' && Character.compare(gameBoard[1],computerValue)==0 && Character.compare(gameBoard[9],computerValue)==0|| gameBoard[5] == '-' &&  Character.compare(gameBoard[1],playerValue)==0 && Character.compare(gameBoard[9],playerValue)==0)
         {gameBoard[5]=computerValue;
             success=true;
-        }else if(Character.compare(gameBoard[3],computerValue)==0 && Character.compare(gameBoard[5],computerValue)==0)
+        }else if(gameBoard[7] == '-' && Character.compare(gameBoard[3],computerValue)==0 && Character.compare(gameBoard[5],computerValue)==0|| gameBoard[7] == '-' &&  Character.compare(gameBoard[3],playerValue)==0 && Character.compare(gameBoard[5],playerValue)==0)
         {gameBoard[7]=computerValue;
             success=true;
-        }else if(Character.compare(gameBoard[5],computerValue)==0 && Character.compare(gameBoard[7],computerValue)==0)
+        }else if(gameBoard[3] == '-' && Character.compare(gameBoard[5],computerValue)==0 && Character.compare(gameBoard[7],computerValue)==0|| gameBoard[3] == '-' &&  Character.compare(gameBoard[5],playerValue)==0 && Character.compare(gameBoard[7],playerValue)==0)
         {gameBoard[3]=computerValue;
             success=true;
-        }else if(Character.compare(gameBoard[3],computerValue)==0 && Character.compare(gameBoard[7],computerValue)==0)
+        }else if(gameBoard[5] == '-' && Character.compare(gameBoard[3],computerValue)==0 && Character.compare(gameBoard[7],computerValue)==0|| gameBoard[5] == '-' &&  Character.compare(gameBoard[3],playerValue)==0 && Character.compare(gameBoard[7],playerValue)==0)
         {gameBoard[5]=computerValue;
             success=true;
         }
