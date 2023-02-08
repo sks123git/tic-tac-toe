@@ -207,8 +207,8 @@ public class TicTacToeGame {
         } else if (Character.compare(gameBoard[1], computerValue) == 0 && Character.compare(gameBoard[5], computerValue) == 0 && Character.compare(gameBoard[9], computerValue) == 0) {
             System.out.println("Computer has won!!!!");
             flag=1;
-        }else {
-            System.out.println("Game is a tie!!");
+        }else if(boardFull==9){
+            System.out.println("Board is full!!!!!");
         }
     }
 
