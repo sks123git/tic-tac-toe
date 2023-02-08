@@ -1,3 +1,4 @@
+import java.util.Random;
 import java.util.Scanner;
 
 //Program to simulate TicTacToe game between computer and player
@@ -50,25 +51,18 @@ public class TicTacToeGame {
 
     public static void computerMove(){
 
-       int computerMove = (int)(Math.random() * 9 + 1);
+       int[] corners = {1,3,7,9};
+        Random generator=new Random();
+        int randomCorner = generator.nextInt(corners.length);
         boolean success = false;
-//        while (success == false){                           //Empty index check
-//            if (gameBoard[computerMove] == '-') {
-//                gameBoard[computerMove] = computerValue;
-//                success = true;
-//            } else {
-//                computerMove = (int)(Math.random() * 9 + 1);
-//
-//            }
-//        }
+        /*
+                added condition below for win situation and blocking the opponent
+                 */
         while (success==false){
                 if(gameBoard[3] == '-' && Character.compare(gameBoard[1],computerValue)==0 && Character.compare(gameBoard[2],computerValue)==0|| gameBoard[3] == '-' && Character.compare(gameBoard[1],playerValue)==0 && Character.compare(gameBoard[2],playerValue)==0) {
                     gameBoard[3] = computerValue;
                     success = true;
                 }
-                /*
-                added condition below for win situation and blocking the opponent
-                 */
         if(gameBoard[1] == '-' && Character.compare(gameBoard[2],computerValue)==0 && Character.compare(gameBoard[3],computerValue)==0 || gameBoard[1] == '-' && Character.compare(gameBoard[2],playerValue)==0 && Character.compare(gameBoard[3],playerValue)==0 )
         {gameBoard[1]=computerValue;
             success=true;
@@ -138,6 +132,10 @@ public class TicTacToeGame {
         }else if(gameBoard[5] == '-' && Character.compare(gameBoard[3],computerValue)==0 && Character.compare(gameBoard[7],computerValue)==0|| gameBoard[5] == '-' &&  Character.compare(gameBoard[3],playerValue)==0 && Character.compare(gameBoard[7],playerValue)==0)
         {gameBoard[5]=computerValue;
             success=true;
+        }else if(gameBoard[randomCorner] == '-'){
+            gameBoard[randomCorner]=computerValue;
+        } else if(gameBoard[5] == '-'){
+            gameBoard[5] = computerValue;
         }
     }
 
