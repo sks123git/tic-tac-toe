@@ -34,7 +34,7 @@ public class TicTacToeGame {
         boolean success = false;
         Scanner scanner = new Scanner(System.in);
         move = scanner.nextInt();
-        while (success == false){                           //Empty index check
+        while (!success){                           //Empty index check
             if (gameBoard[move] == '-') {
                 gameBoard[move] = playerValue;
                 success = true;
@@ -53,14 +53,14 @@ public class TicTacToeGame {
 
        int[] corners = {1,3,7,9};
         Random generator=new Random();
-        int randomCorner = generator.nextInt(corners.length);;
+        int randomCorner = generator.nextInt(corners.length);
         int[] sides = {2,4,6,8};
         int randomSides = generator.nextInt(sides.length);
         boolean success = false;
         /*
                 added condition below for win situation and blocking the opponent
                  */
-        while (success==false){
+        while (!success){
                 if(gameBoard[3] == '-' && Character.compare(gameBoard[1],computerValue)==0 && Character.compare(gameBoard[2],computerValue)==0|| gameBoard[3] == '-' && Character.compare(gameBoard[1],playerValue)==0 && Character.compare(gameBoard[2],playerValue)==0) {
                     gameBoard[3] = computerValue;
                     success = true;
@@ -134,7 +134,7 @@ public class TicTacToeGame {
         }else if(gameBoard[5] == '-' && Character.compare(gameBoard[3],computerValue)==0 && Character.compare(gameBoard[7],computerValue)==0|| gameBoard[5] == '-' &&  Character.compare(gameBoard[3],playerValue)==0 && Character.compare(gameBoard[7],playerValue)==0)
         {gameBoard[5]=computerValue;
             success=true;
-        }else if(success==false){
+        }else if(!success){
             while (gameBoard[randomCorner] != '-'){
                 randomCorner = generator.nextInt(corners.length);
             }
@@ -143,7 +143,7 @@ public class TicTacToeGame {
         } else if(gameBoard[5] == '-'){
             gameBoard[5] = computerValue;
             success=true;
-        } else if(success==false){
+        } else if(!success){
             while (gameBoard[randomSides] != '-'){
                 randomSides = generator.nextInt(sides.length);
             }
@@ -215,7 +215,7 @@ public class TicTacToeGame {
 
     public static void main(String[] args) {
         Scanner scanner=new Scanner(System.in);
-        int userInput=0;
+        int userInput;
 
 
 
@@ -256,6 +256,7 @@ public class TicTacToeGame {
                 userInput = scanner.nextInt();
                 if(userInput==1){
                     flag=0;
+                    boardFull=1;
                 }
             }
 
