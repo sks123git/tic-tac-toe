@@ -62,7 +62,7 @@ public class TicTacToeGame {
 //            }
 //        }
         while (success==false){
-                if(gameBoard[computerMove] == '-' && Character.compare(gameBoard[1],computerValue)==0 && Character.compare(gameBoard[2],computerValue)==0) {
+                if(gameBoard[3] == '-' && Character.compare(gameBoard[1],computerValue)==0 && Character.compare(gameBoard[2],computerValue)==0|| gameBoard[3] == '-' && Character.compare(gameBoard[1],playerValue)==0 && Character.compare(gameBoard[2],playerValue)==0) {
                     gameBoard[3] = computerValue;
                     success = true;
                 }
