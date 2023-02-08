@@ -52,15 +52,93 @@ public class TicTacToeGame {
 
        int computerMove = (int)(Math.random() * 9 + 1);
         boolean success = false;
-        while (success == false){                           //Empty index check
-            if (gameBoard[computerMove] == '-') {
-                gameBoard[computerMove] = computerValue;
-                success = true;
-            } else {
-                computerMove = (int)(Math.random() * 9 + 1);
+//        while (success == false){                           //Empty index check
+//            if (gameBoard[computerMove] == '-') {
+//                gameBoard[computerMove] = computerValue;
+//                success = true;
+//            } else {
+//                computerMove = (int)(Math.random() * 9 + 1);
+//
+//            }
+//        }
+        while (success==false){
+                if(Character.compare(gameBoard[1],computerValue)==0 && Character.compare(gameBoard[2],computerValue)==0)
+                {gameBoard[3]=computerValue;
+                    success=true;
+                }
 
-            }
+        if(Character.compare(gameBoard[2],computerValue)==0 && Character.compare(gameBoard[3],computerValue)==0)
+        {gameBoard[1]=computerValue;
+            success=true;
+        } else if(Character.compare(gameBoard[1],computerValue)==0 && Character.compare(gameBoard[3],computerValue)==0)
+        {gameBoard[2]=computerValue;
+            success=true;
+        } else if(Character.compare(gameBoard[4],computerValue)==0 && Character.compare(gameBoard[5],computerValue)==0)
+            {gameBoard[6]=computerValue;
+                success=true;
+            } else if(Character.compare(gameBoard[5],computerValue)==0 && Character.compare(gameBoard[6],computerValue)==0)
+            {gameBoard[4]=computerValue;
+                success=true;
+            } else if(Character.compare(gameBoard[4],computerValue)==0 && Character.compare(gameBoard[6],computerValue)==0)
+            {gameBoard[5]=computerValue;
+                success=true;
+            } else if(Character.compare(gameBoard[7],computerValue)==0 && Character.compare(gameBoard[8],computerValue)==0)
+            {gameBoard[9]=computerValue;
+            success=true;
+            } else if(Character.compare(gameBoard[8],computerValue)==0 && Character.compare(gameBoard[9],computerValue)==0)
+            {gameBoard[7]=computerValue;
+            success=true;
+            }else if(Character.compare(gameBoard[7],computerValue)==0 && Character.compare(gameBoard[9],computerValue)==0)
+            {gameBoard[8]=computerValue;
+            success=true;
+            }else if(Character.compare(gameBoard[1],computerValue)==0 && Character.compare(gameBoard[4],computerValue)==0)
+            {gameBoard[7]=computerValue;
+            success=true;
+            }else if(Character.compare(gameBoard[4],computerValue)==0 && Character.compare(gameBoard[7],computerValue)==0)
+        {gameBoard[1]=computerValue;
+            success=true;
+        }else if(Character.compare(gameBoard[1],computerValue)==0 && Character.compare(gameBoard[7],computerValue)==0)
+        {gameBoard[4]=computerValue;
+            success=true;
+        }else if(Character.compare(gameBoard[2],computerValue)==0 && Character.compare(gameBoard[5],computerValue)==0)
+        {gameBoard[8]=computerValue;
+            success=true;
+        }else if(Character.compare(gameBoard[5],computerValue)==0 && Character.compare(gameBoard[8],computerValue)==0)
+        {gameBoard[2]=computerValue;
+            success=true;
+        }else if(Character.compare(gameBoard[2],computerValue)==0 && Character.compare(gameBoard[8],computerValue)==0)
+        {gameBoard[5]=computerValue;
+            success=true;
+        }else if(Character.compare(gameBoard[3],computerValue)==0 && Character.compare(gameBoard[6],computerValue)==0)
+        {gameBoard[9]=computerValue;
+            success=true;
+        }else if(Character.compare(gameBoard[6],computerValue)==0 && Character.compare(gameBoard[9],computerValue)==0)
+        {gameBoard[3]=computerValue;
+            success=true;
+        }else if(Character.compare(gameBoard[3],computerValue)==0 && Character.compare(gameBoard[9],computerValue)==0)
+        {gameBoard[6]=computerValue;
+            success=true;
+        }else if(Character.compare(gameBoard[1],computerValue)==0 && Character.compare(gameBoard[5],computerValue)==0)
+        {gameBoard[9]=computerValue;
+            success=true;
+        }else if(Character.compare(gameBoard[5],computerValue)==0 && Character.compare(gameBoard[9],computerValue)==0)
+        {gameBoard[1]=computerValue;
+            success=true;
+        }else if(Character.compare(gameBoard[1],computerValue)==0 && Character.compare(gameBoard[9],computerValue)==0)
+        {gameBoard[5]=computerValue;
+            success=true;
+        }else if(Character.compare(gameBoard[3],computerValue)==0 && Character.compare(gameBoard[5],computerValue)==0)
+        {gameBoard[7]=computerValue;
+            success=true;
+        }else if(Character.compare(gameBoard[5],computerValue)==0 && Character.compare(gameBoard[7],computerValue)==0)
+        {gameBoard[3]=computerValue;
+            success=true;
+        }else if(Character.compare(gameBoard[3],computerValue)==0 && Character.compare(gameBoard[7],computerValue)==0)
+        {gameBoard[5]=computerValue;
+            success=true;
         }
+    }
+
         showBoard();
         winCheck();
         boardFull++;
