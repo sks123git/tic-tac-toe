@@ -209,41 +209,56 @@ public class TicTacToeGame {
             flag=1;
         }else if(boardFull==9){
             System.out.println("Board is full!!!!!");
+            flag=1;
         }
     }
 
     public static void main(String[] args) {
+        Scanner scanner=new Scanner(System.in);
+        int userInput=0;
 
-        System.out.println("@@@@@@@@@@@@@@ Welcome to TicTacToe game @@@@@@@@@@@@@");
-        //player choose a letter between x or o to proceed
 
-        for (int i = 1; i < 10; i++) {
-            gameBoard[i] = '-';
-        }
-        playerValue=chooseLetterXorO();
-        if (playerValue=='x'){
-            computerValue = 'o';
-        }else {
-            computerValue = 'x';
-        }
-        showBoard();
+
+        while(flag==0) {
+            System.out.println("@@@@@@@@@@@@@@ Welcome to TicTacToe game @@@@@@@@@@@@@");
+            //player choose a letter between x or o to proceed
+            for (int i = 1; i < 10; i++) {
+                gameBoard[i] = '-';
+            }
+            playerValue = chooseLetterXorO();
+            if (playerValue == 'x') {
+                computerValue = 'o';
+            } else {
+                computerValue = 'x';
+            }
+            showBoard();
 
 
             if (toss() == 1) {                                 // If 1 then user win and plays first
-                System.out.println("Player turn");
+                System.out.println("You won toss. Your turn");
                 playerMove();
             } else {
-                System.out.println("Computer turn");
+                System.out.println("Computer won toss. Computer turn");
                 computerMove();
             }
 
-            while (boardFull<10 && flag==0){
-                if(chance==1){
+            while (boardFull < 10 && flag == 0) {
+                if (chance == 1) {
                     System.out.println("Computer turn");
                     computerMove();
-                }else{
+                } else {
                     playerMove();
                 }
             }
+
+            if(flag==1){
+                System.out.println("Do you want to play again. Press 1 to replay 0 to exit .");
+                userInput = scanner.nextInt();
+                if(userInput==1){
+                    flag=0;
+                }
+            }
+
+        }
     }
 }
